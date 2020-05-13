@@ -14,9 +14,9 @@ from torch import optim
 import torch.nn.functional as F
 
 class Config():
-    training_dir = "./Root/data/faces/training/"
+    training_dir = "Root/data/faces/training/"
     train_batch_size = 64
-    train_number_epochs = 100
+    train_number_epochs = 10
 
 class SiameseNetworkDataset(Dataset):
     
@@ -63,27 +63,25 @@ class SiameseNetworkDataset(Dataset):
 
 folder_dataset = dset.ImageFolder(root=Config.training_dir)
 siamese_dataset = SiameseNetworkDataset(imageFolderDataset=folder_dataset,
-                                        transform=transforms.Compose([
+                                        transform=transforms.Compose([transforms.Resize((100,100)),
                                                                       transforms.ToTensor()
                                                                       ])
                                        ,should_invert=False)
-                    
+
+
 class SiameseNetwork(nn.Module):
     def __init__(self):
         super(SiameseNetwork, self).__init__()
         self.cnn1 = nn.Sequential(
-            nn.ReflectionPad2d(1),
             nn.Conv2d(1, 4, kernel_size=3),
             nn.ReLU(inplace=True),
             nn.BatchNorm2d(4),
             
-            nn.ReflectionPad2d(1),
             nn.Conv2d(4, 8, kernel_size=3),
             nn.ReLU(inplace=True),
             nn.BatchNorm2d(8),
 
 
-            nn.ReflectionPad2d(1),
             nn.Conv2d(8, 8, kernel_size=3),
             nn.ReLU(inplace=True),
             nn.BatchNorm2d(8),
@@ -92,7 +90,7 @@ class SiameseNetwork(nn.Module):
         )
 
         self.fc1 = nn.Sequential(
-            nn.Linear(8*100*100, 500),
+            nn.Linear(70688, 500),
             nn.ReLU(inplace=True),
 
             nn.Linear(500, 500),
@@ -101,7 +99,7 @@ class SiameseNetwork(nn.Module):
             nn.Linear(500, 5))
 
     def forward_once(self, x):
-        output = self.cnn1(x)
+        output = self.cnn1(x.float())
         output = output.view(output.size()[0], -1)
         output = self.fc1(output)
         return output
@@ -133,19 +131,18 @@ train_dataloader = DataLoader(siamese_dataset,
                         shuffle=True,
                         num_workers=8,
                         batch_size=Config.train_batch_size)
-
-net = SiameseNetwork()  
+        
+net = SiameseNetwork()
 criterion = ContrastiveLoss()
 optimizer = optim.Adam(net.parameters(),lr = 0.0005 )
 
-# for epoch in range(0,Config.train_number_epochs):
-#     for i, data in enumerate(train_dataloader,0):
-#         img0, img1 , label = data
-#         optimizer.zero_grad()
-#         output1,output2 = net(img0,img1)
-#         loss_contrastive = criterion(output1,output2,label)
-#         loss_contrastive.backward()
-#         optimizer.step()
-#         if i %10 == 0 :
-#             print("Epoch number {}\n Current loss {}\n".format(epoch,loss_contrastive.item()))
-
+for epoch in range(0,Config.train_number_epochs):
+    for i, data in enumerate(train_dataloader,0):
+        img0, img1 , label = data
+        optimizer.zero_grad()
+        output1,output2 = net(img0,img1)
+        loss_contrastive = criterion(output1,output2,label)
+        loss_contrastive.backward()
+        optimizer.step()
+        if i %10 == 0 :
+            print("Epoch number {}\n Current loss {}\n".format(epoch,loss_contrastive.item()))
