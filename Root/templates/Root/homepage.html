@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'Root/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Asul&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="container-fluid main1">
+      <div class="header">
+        <div id = 'particles-js'>
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title head">Face-Recognition</h5>
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+              <div class="row mt-5">
+                <div class="col-md-6 inputone br">
+                  <p>Select First Image :</p>
+                  <input required type="file" id = 'file1' name = 'file1'>
+                  <label for="file1">
+                    <img height="50" name = 'image1' src="{% static 'Root/Images/photo.svg' %}">
+                  </label>
+                  <img src = '' id ='profile-img-tag1'>
+                </div>
+                <div class="col-md-6  inputone bl">
+                  <p>Select Second Image :</p>
+                  <input required type="file" id = 'file2' name = 'file2'>
+                  <label for="file2">
+                    <img height="50" name = 'image2' src="{% static 'Root/Images/photo.svg' %}">
+                  </label>
+                  <img src="" id = 'profile-img-tag2'>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-12">
+                  <button class="btn btn-primary custom">Check !</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src= "{% static 'Root/Jsfiles/particles.js' %}"></script>
+    <script src= "{% static 'Root/Jsfiles/app.js' %}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src= "{% static 'Root/Jsfiles/homescreen.js' %}"></script>
+</body>
+</html>
