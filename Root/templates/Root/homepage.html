@@ -22,7 +22,7 @@
           <div class="card text-center">
             <div class="card-body">
               <h5 class="card-title head">Face-Recognition</h5>
-              <form method="POST" enctype="multipart/form-data">
+              <form method="POST" enctype="multipart/form-data" id ='formpass'>
                 {% csrf_token %}
               <div class="row mt-5">
                 <div class="col-md-6 inputone br">
@@ -31,7 +31,9 @@
                   <label for="file1">
                     <img height="50" name = 'image1' src="{% static 'Root/Images/photo.svg' %}">
                   </label>
-                  <img src = '' id ='profile-img-tag1'>
+                  <br>
+                  <br>
+                  <img class="img-responsive img-fluid newimg" alt= "No image selected" src = '' height="250" width="250" id ='profile-img-tag1'>
                 </div>
                 <div class="col-md-6  inputone bl">
                   <p>Select Second Image :</p>
@@ -39,7 +41,14 @@
                   <label for="file2">
                     <img height="50" name = 'image2' src="{% static 'Root/Images/photo.svg' %}">
                   </label>
-                  <img src="" id = 'profile-img-tag2'>
+                  <br>
+                  <br>
+                  <img class="img-responsive img-fluid newimg" alt= "No image selected" height="250" width="250" src='' id = 'profile-img-tag2'>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12">
+                  <p>Dissimilarity : {{similarity}}</p>
                 </div>
               </div>
               <div class="row mt-4">
@@ -56,5 +65,7 @@
     <script src= "{% static 'Root/Jsfiles/app.js' %}"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src= "{% static 'Root/Jsfiles/homescreen.js' %}"></script>
+    <script src= "{% static 'Root/Jsfiles/Imgfix.js' %}"></script>
+
 </body>
 </html>

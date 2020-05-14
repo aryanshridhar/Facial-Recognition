@@ -1,17 +1,17 @@
 import cv2 
+import numpy as np
 
 class FaceCoordinates:
 
     def __init__(self):
         pass
 
-    def GetLocation(self , image_array):
-        image = image_array
-        if len(image.shape) !=  2:
-            gray = cv2.cvtColor(image_array, cv2.COLOR_BGR2GRAY)
+    def GetLocation(self , image): # Takes in PIL Image
+        image = np.array(image) # Convert to Numpy array
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
         faces = faceCascade.detectMultiScale(
-                                image,
+                                gray,
                                 scaleFactor=1.3,
                                 minNeighbors=3,
                                 minSize=(50, 50)

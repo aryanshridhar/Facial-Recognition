@@ -27,18 +27,14 @@ class SiameseNetworkDataset(Dataset):
         
     def __getitem__(self,index):
         img0_tuple = random.choice(self.imageFolderDataset.imgs)
-        #we need to make sure approx 50% of images are in the same class
         should_get_same_class = random.randint(0,1) 
         if should_get_same_class:
             while True:
-                #keep looping till the same class image is found
                 img1_tuple = random.choice(self.imageFolderDataset.imgs) 
                 if img0_tuple[1]==img1_tuple[1]:
                     break
         else:
             while True:
-                #keep looping till a different class image is found
-                
                 img1_tuple = random.choice(self.imageFolderDataset.imgs) 
                 if img0_tuple[1] !=img1_tuple[1]:
                     break
@@ -110,11 +106,6 @@ class SiameseNetwork(nn.Module):
         return output1, output2
 
 class ContrastiveLoss(torch.nn.Module):
-    """
-    Contrastive loss function.
-    Based on: http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf
-    """
-
     def __init__(self, margin=2.0):
         super(ContrastiveLoss, self).__init__()
         self.margin = margin
@@ -131,6 +122,19 @@ train_dataloader = DataLoader(siamese_dataset,
                         shuffle=True,
                         num_workers=8,
                         batch_size=Config.train_batch_size)
+
+# class TripletLoss(nn.Module):
+
+#     def __init__(self, margin=2.0):
+#         super(TripletLoss, self).__init__()
+#         self.margin = margin
+
+#     def forward(self, anchor, positive, negative, size_average=True):
+#         distance_positive = (anchor - positive).pow(2).sum(1)  # .pow(.5)
+#         distance_negative = (anchor - negative).pow(2).sum(1)  # .pow(.5)
+#         losses = F.relu(distance_positive - distance_negative + self.margin)
+#         return losses.mean() if size_average else losses.sum()
+
         
 net = SiameseNetwork()
 criterion = ContrastiveLoss()

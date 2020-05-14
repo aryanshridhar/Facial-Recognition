@@ -15,7 +15,7 @@
 }
 .card{
     z-index: 9999;
-    width: 65%;
+    width: 60%;
     padding-right: 10px;
     padding-left: 10px;
     border-radius: 10px;
@@ -36,7 +36,7 @@ label:hover{
     border-top : 2px dotted #222222;
     border-bottom : 2px dotted #222222;
     border-radius: 8px;
-    padding: 10%;
+    padding: 5%;
     box-sizing: border-box;
 }
 .br{
@@ -46,4 +46,16 @@ label:hover{
 .bl{
     border-right: 2px dotted #262626;
     border-left: 1px dotted #262626;
+}
+.newimg{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    
+}
+
+
+.newimg:hover{
+    box-shadow: 0 0 2px 1px #262626;
+    transition: .5s ease;
 }
