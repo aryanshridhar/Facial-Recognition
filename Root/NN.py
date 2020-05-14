@@ -16,7 +16,7 @@ import torch.nn.functional as F
 class Config():
     training_dir = "Root/data/faces/training/"
     train_batch_size = 64
-    train_number_epochs = 10
+    train_number_epochs = 50
 
 class SiameseNetworkDataset(Dataset):
     
