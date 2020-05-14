@@ -11,7 +11,7 @@ import torch
 def homepage(request):
     f1 = FaceCoordinates()
     net = SiameseNetwork()
-    similarity = 0
+    dissimilarity = 0
     if request.method == 'POST':
         img1 = Image.open(request.FILES['file1']) # PIL Image
         img2 = Image.open(request.FILES['file2']) # PIL Image
@@ -22,6 +22,8 @@ def homepage(request):
         location2 = ProcessImage().Process(location2)
 
         output1 , output2 = net(torch.from_numpy(location1) , torch.from_numpy(location2))
-        similarity = F.pairwise_distance(output1 , output2).item()
+        dissimilarity = F.pairwise_distance(output1 , output2).item()
+
+        return render(request , 'Root/Results.html' , {'dissimilarity' : float(round(float(dissimilarity) , 2)) })
         
-    return render(request , 'Root/homepage.html' , {'similarity' : float(round(float(similarity) , 2)) })
+    return render(request , 'Root/homepage.html')
