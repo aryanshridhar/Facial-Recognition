@@ -6,6 +6,8 @@ function readURL1(input) {
         reader.onload = function (e) {
 
             $('#profile-img-tag1').attr('src', e.target.result);
+            console.log(e.target.result)
+            sessionStorage.setItem('img1' , e.target.result)
 
         }
         reader.readAsDataURL(input.files[0]);
@@ -20,7 +22,8 @@ function readURL2(input) {
         reader.onload = function (e) {
 
             $('#profile-img-tag2').attr('src', e.target.result);
-
+            sessionStorage.setItem('img2' , e.target.result)
+            
         }
         reader.readAsDataURL(input.files[0]);
     }

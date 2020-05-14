@@ -1,0 +1,488 @@
+.
+├── db.sqlite3
+├── FaceRecognition
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-36.pyc
+│   │   ├── __init__.cpython-37.pyc
+│   │   ├── settings.cpython-36.pyc
+│   │   ├── settings.cpython-37.pyc
+│   │   ├── urls.cpython-36.pyc
+│   │   ├── urls.cpython-37.pyc
+│   │   ├── wsgi.cpython-36.pyc
+│   │   └── wsgi.cpython-37.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── filestructure.txt
+├── LICENSE
+├── manage.py
+├── README.md
+├── requirements.txt
+└── Root
+    ├── admin.py
+    ├── apps.py
+    ├── data
+    │   └── faces
+    │       └── training
+    │           ├── README
+    │           ├── s1
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s10
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s11
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s12
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s13
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s14
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s15
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s16
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s17
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s18
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s19
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s2
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s20
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s21
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s22
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s23
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s24
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s25
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s26
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s27
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s28
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s29
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s3
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s30
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s31
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s32
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s33
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s34
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s35
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s36
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s37
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s38
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s39
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s4
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s40
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           ├── s8
+    │           │   ├── 10.pgm
+    │           │   ├── 1.pgm
+    │           │   ├── 2.pgm
+    │           │   ├── 3.pgm
+    │           │   ├── 4.pgm
+    │           │   ├── 5.pgm
+    │           │   ├── 6.pgm
+    │           │   ├── 7.pgm
+    │           │   ├── 8.pgm
+    │           │   └── 9.pgm
+    │           └── s9
+    │               ├── 10.pgm
+    │               ├── 1.pgm
+    │               ├── 2.pgm
+    │               ├── 3.pgm
+    │               ├── 4.pgm
+    │               ├── 5.pgm
+    │               ├── 6.pgm
+    │               ├── 7.pgm
+    │               ├── 8.pgm
+    │               └── 9.pgm
+    ├── FaceDetect.py
+    ├── __init__.py
+    ├── migrations
+    │   ├── __init__.py
+    │   └── __pycache__
+    │       ├── 0001_initial.cpython-36.pyc
+    │       ├── 0002_auto_20200512_1418.cpython-36.pyc
+    │       ├── __init__.cpython-36.pyc
+    │       └── __init__.cpython-37.pyc
+    ├── models.py
+    ├── NN.py
+    ├── ProcessImage.py
+    ├── __pycache__
+    │   ├── admin.cpython-36.pyc
+    │   ├── admin.cpython-37.pyc
+    │   ├── apps.cpython-36.pyc
+    │   ├── apps.cpython-37.pyc
+    │   ├── ConvertTensor.cpython-36.pyc
+    │   ├── FaceDetect.cpython-36.pyc
+    │   ├── forms.cpython-36.pyc
+    │   ├── __init__.cpython-36.pyc
+    │   ├── __init__.cpython-37.pyc
+    │   ├── models.cpython-36.pyc
+    │   ├── models.cpython-37.pyc
+    │   ├── NN.cpython-36.pyc
+    │   ├── ProcessImage.cpython-36.pyc
+    │   ├── SiameseNN.cpython-36.pyc
+    │   ├── urls.cpython-36.pyc
+    │   ├── urls.cpython-37.pyc
+    │   ├── views.cpython-36.pyc
+    │   └── views.cpython-37.pyc
+    ├── static
+    │   └── Root
+    │       ├── css
+    │       │   ├── style.css
+    │       │   └── styleresult.css
+    │       ├── Images
+    │       │   └── favi.png
+    │       └── Jsfiles
+    │           ├── app.js
+    │           ├── homescreen.js
+    │           ├── particles.js
+    │           └── Result.js
+    ├── templates
+    │   └── Root
+    │       ├── homepage.html
+    │       └── Results.html
+    ├── tests.py
+    ├── urls.py
+    └── views.py
+
+53 directories, 432 files

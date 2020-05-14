@@ -1,0 +1,53 @@
+.main1{
+    margin: 0;
+    padding: 0;
+}
+#particles-js{
+    background-color: #262626;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.particles-js-canvas-el{
+    position: absolute;
+}
+.card{
+    z-index: 9999;
+    width: 65%;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+.head{
+    font-family: "Asul";
+    font-size: 2.5em;
+}
+
+.newimg:hover{
+    box-shadow: 0 0 2px 1px #262626;
+    transition: .5s ease;
+}
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    padding: 15% 40% 15% 40%; 
+    border: 2px solid #262626;
+    border-radius: 5px;
+}
+.movecenter{
+    align-self:center;
+    margin-top : -7%;
+}
+.num{
+    font-family: 'Asul';
+    font-size: 1.3rem;
+}
+.num1{
+    font-family: 'Asul';
+    font-size: 2rem;
+}
