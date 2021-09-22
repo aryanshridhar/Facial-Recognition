@@ -1,6 +1,6 @@
 asgiref==3.2.7
 cycler==0.10.0
-Django==3.1.8
+Django==3.1.13
 future==0.18.2
 kiwisolver==1.2.0
 matplotlib==3.2.1
